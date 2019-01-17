@@ -39,6 +39,7 @@ public class VdocipherRnBridgeModule extends ReactContextBaseJavaModule {
     android.util.Log.i("params", "[" + otp + ", " + playbackInfo + "]");
     ReactApplicationContext context = getReactApplicationContext();
     Intent intent = VdoPlayerActivity.getStartIntent(context, otp, playbackInfo);
+    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
     context.startActivity(intent);
   }
 }
